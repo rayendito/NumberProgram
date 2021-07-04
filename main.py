@@ -32,7 +32,6 @@ def quickSort(angkas, left, right):
                 begin += 1
             elif(angkas[begin] > pivot and pivot > angkas[end]):
                 angkas[begin], angkas[end] = angkas[end], angkas[begin]
-                begin += 1
                 end -= 1
 
         angkas[left], angkas[end] = angkas[end], angkas[left]
