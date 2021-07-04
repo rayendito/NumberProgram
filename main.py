@@ -39,35 +39,6 @@ def quickSort(angkas, left, right):
         
         quickSort(angkas, left, end-1)
         quickSort(angkas, end+1, right)
-        
-
-    # #basis rekurens
-    # if(len(numbers) <= 1):
-    #     return numbers
-    # elif(len(numbers) == 2):
-    #     if(numbers[0] > numbers[1]):
-    #         numbers[0], numbers[1] = numbers[1], numbers[0]
-    #     return numbers
-    # else:
-    #     if(pivotFront):
-    #         pivot = numbers[0]
-    #         begin = 1
-    #         end = len(numbers)-1
-
-    #     else:
-    #         pivot = numbers[0]
-    #         begin = 1
-    #         end = len(numbers)-1
-        
-    #     while(begin < end):
-    #         if(numbers[end] > pivot):
-    #             end -= 1
-    #         elif(numbers[begin] < pivot):
-    #             begin += 1
-    #         elif(numbers[begin] >= pivot and numbers[end] <= pivot):
-    #             numbers[begin], numbers[end] = numbers[end], numbers[begin]
-    #     numbers[0], numbers[end] = numbers[end], numbers[0]
-    #     return (quickSort(numbers[:begin]) + [numbers[begin]] + quickSort(numbers[begin+1:]))
 
 #TESTING USING NUMPY
 for i in range(10):
