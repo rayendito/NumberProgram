@@ -11,12 +11,13 @@
 # Memasukkan input
 # format input angka dipisah dengan spasi:
 # Contoh : 7 3 6 2 0 9
-# angkas = [float(angka) for angka in input("Masukkan angka-angka : ").split()]
+angkas = [float(angka) for angka in input("Masukkan angka-angka : ").split()]
 
-# Sorting Diimplementasi dengan Quick Sort
+# Sorting diimplementasi dengan algoritma rekursif quick sort
 # Fungsi menerima deret angka dan mereturn deret angka yang sudah terurut
 # dengan menggunakan algoritma Quick Sort
 
+# import library untuk testing
 import random
 import numpy as np
 
@@ -39,18 +40,32 @@ def quickSort(angkas, left, right):
         quickSort(angkas, left, end-1)
         quickSort(angkas, end+1, right)
 
-#TESTING USING NUMPY
-for i in range(10):
-    randnums = [random.randint(-10,10) for i in range(10)]
-    print("Awal :",randnums)
-    quickSort(randnums,0,9)
-    print("Terurut: ", randnums)
-    print()
+def rataRata(angkas):
+    sum = 0
+    for i in range(len(angkas)):
+        sum += angkas[i]
+    return sum/len(angkas)
 
-# a = [6, 7, -7, 5, 2, -6, -5, -8, 1, 8]
-# b = [3, 5, -3, -1, 1, 2, 4]
-# quickSort(a, 0, len(a)-1)
-# quickSort(b, 0, len(b)-1)
-# print(a)
-# print(b)
-            
+def productAll(angkas):
+    prod = 1
+    for i in range(len(angkas)):
+        sum *= angkas[i]
+    return prod
+
+def median(angkas):
+    n = len(angkas)
+    quickSort(angkas,0,n)
+    if(n%2 == 0):
+        return (angkas(n//2)+angkas((n//2)-1))/2
+    else:
+        return angkas(n//2)
+
+
+# TESTING MENGGUNAKAN NUMPY
+# Uncomment untuk menjalankan
+# for i in range(10):
+#     randnums = [random.randint(-10,10) for i in range(10)]
+#     print("Awal :",randnums)
+#     quickSort(randnums,0,9)
+#     print("Terurut: ", randnums)
+#     print()
